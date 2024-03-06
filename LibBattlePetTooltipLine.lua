@@ -1,6 +1,6 @@
 local lib = LibStub:NewLibrary("LibBattlePetTooltipLine-1-0", 1)
 
-if not lib or not BattlePetTooltip_Show then return end
+if not lib or not BattlePetToolTip_Show then return end
 
 local battlePetTooltipFontStringPool = CreateFontStringPool(UIParent, "ARTWORK", 0, "GameTooltipText")
 
