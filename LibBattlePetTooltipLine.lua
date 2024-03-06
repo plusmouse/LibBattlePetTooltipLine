@@ -4,7 +4,7 @@ if not lib or not BattlePetToolTip_Show then return end
 
 local battlePetTooltipFontStringPool = CreateFontStringPool(UIParent, "ARTWORK", 0, "GameTooltipText")
 
-local padding = 12
+local padding = 10
 
 local function PetTooltipShow(tooltip)
   tooltip.Name:SetPoint("LEFT", padding, 0)
