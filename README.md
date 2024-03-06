@@ -10,7 +10,7 @@ lines not match up.
 ```lua
 local LibBattlePetTooltipLine = LibStub("LibBattlePetTooltipLine-1-0")
 
-hooksecurefunc("BattlePetTooltip_Show", function(...)
+hooksecurefunc("BattlePetToolTip_Show", function(...)
   LibBattlePetTooltipLine:AddDoubleLine(BattlePetTooltip, "Special Detail",
 RED_FONT_COLOR:WrapTextInColorCode("Me"))
 end)
