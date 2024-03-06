@@ -35,14 +35,11 @@ FloatingBattlePetTooltip:HookScript("OnHide", DefaultSetup)
 
 function lib:AddLine(tooltip, left, wrapText)
   assert(tooltip.PetType)
-  tooltip:AddLine(left, 1, 1, 1, wrapText)
-  local rightText = battlePetTooltipFontStringPool:Acquire()
-  rightText:SetPoint("RIGHT", tooltip, -padding, 0)
-  if not wrapText then
-    local neededWidth = rightText:GetWidth() + 2 * padding
-    if neededWidth > tooltip:GetWidth() then
-      tooltip:SetWidth(neededWidth)
-    end
+  tooltip:AddLine(left, nil, nil, nil, wrapText)
+  local leftText = tooltip.textLineAnchor
+  local neededWidth = leftText:GetWidth() + 2 * padding
+  if neededWidth > tooltip:GetWidth() then
+    tooltip:SetWidth(neededWidth)
   end
 end
 
@@ -56,9 +53,9 @@ function lib:AddDoubleLine(tooltip, left, right)
   end)
   rightText:Show()
   rightText:SetPoint("TOP", tooltip.textLineAnchor)
+  rightText:SetPoint("RIGHT", tooltip, -padding, 0)
   rightText:SetText(right)
   local neededWidth = rightText:GetWidth() + tooltip.textLineAnchor:GetWidth() + 40 + 2 * padding
-  rightText:SetPoint("RIGHT", tooltip, -padding, 0)
   if neededWidth > tooltip:GetWidth() then
     tooltip:SetWidth(neededWidth)
   end
